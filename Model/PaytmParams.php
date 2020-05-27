@@ -12,7 +12,8 @@ class PaytmParams extends \Magento\Payment\Model\Method\AbstractMethod implement
     protected $storeManager;
     protected $_orderFactory;
 
-    CONST CHANNEL_ID = "WAP";
+    CONST CHANNEL_ID = 'WAP';
+    CONST CALLBACK_URL = 'https://securegw.paytm.in/theia/paytmCallback?ORDER_ID=';
 
     public function __construct(
         \Magento\Framework\Model\Context $context,
@@ -73,7 +74,7 @@ class PaytmParams extends \Magento\Payment\Model\Method\AbstractMethod implement
             $connection->query($sql);
         }
 
-        $callBackUrl = $this->urlBuilder->getUrl('paytm/Standard/Response', ['_secure' => true]);
+        $callBackUrl = self::CALLBACK_URL . $paytmOrderId;
         $params = array(
             'MID' => trim($this->getConfigData("MID")),
             'TXN_AMOUNT' => round($order->getGrandTotal(), 2),

@@ -2,4 +2,5 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
 
     <preference for="Plab\PaytmRest\Api\PaytmParamsInterface" type="Plab\PaytmRest\Model\PaytmParams"></preference>
+    <preference for="Plab\PaytmRest\Api\PaytmResponseInterface" type="Plab\PaytmRest\Model\PaytmResponse"></preference>
 </config>

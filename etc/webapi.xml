@@ -6,4 +6,11 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+
+    <route url="/V1/plab/paytm/response" method="POST">
+        <service class="Plab\PaytmRest\Api\PaytmResponseInterface" method="setResponse"/>
+        <resources>
+            <resource ref="anonymous" />
+        </resources>
+    </route>
 </routes>
